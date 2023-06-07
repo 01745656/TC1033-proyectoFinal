@@ -11,6 +11,7 @@ private:
     double nivelGas;
     double tasaDis;
     int capMax;
+    double nivelPerc;
 
 public:
     Tanque();
