@@ -26,7 +26,7 @@ double Tanque::cargarTanque(int lit)
     }
     else
     {
-        cout << "No"<<endl;
+        cout << "El tanque esta a su maxima capacidad"<<endl;
         return nivelPerc;
     }
     
