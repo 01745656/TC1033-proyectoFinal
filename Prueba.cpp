@@ -4,22 +4,29 @@
 
 #include "Tanque.h"
 #include "Luces.h"
+#include "Tablero.h"
 #include <iostream>
 using namespace std;
 int main(int argc, char const *argv[])
 {
     Tanque t;
-    //t.imprimir();
-    //t.gastarTanque(25);
-    //t.imprimir();
-    //t.cargarTanque(15);
-    //t.imprimir();
+    t.imprimir();
+    
 
     Luces l;
     l.imprimir();
-    l.apagarLuces();
-    l.imprimir();
-    int a = l.getestadoLuces();
+
+    Tablero ta;
+    ta.dibujarTablero(t, l);
+
+    t.gastarTanque(25);
+    l.prenderLuces();
+    t.gastarTanque(200);
+    
+
+    ta.dibujarTablero(t,l);
+    
+    
     
 
     return 0;

@@ -45,3 +45,8 @@ void Tanque::imprimir()
         cout << "Tasa es: " << tasaDis << endl;
         cout << "Cap Max es: " << capMax << endl;
     }
+
+    double Tanque::getNivelGas()
+    {
+        return nivelPerc;
+    }
