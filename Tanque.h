@@ -15,6 +15,7 @@ private:
 
 public:
     Tanque();
+    Tanque(int nivGas);
     double cargarTanque(int lit);
     double gastarTanque(int velAct);
     double getNivelGas();

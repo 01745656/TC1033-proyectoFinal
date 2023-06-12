@@ -6,35 +6,36 @@
 #include <iostream>
 #include "Luces.h"
 #include "Tanque.h"
+#include "Auto.h"
 using namespace std;
 
 Tablero::Tablero()
 {
-    nivelGas = 0;
-    estadoLuces = 0;
+    interaccion = 0;
     nivelPeligro = 15;
     velocidadPeligro = 160;
-    
+    velocidad = 0;
+    nivelGas = 100;
 }
 
 
-void Tablero::dibujarTablero(Tanque t, Luces l)
+void Tablero::dibujarTablero(Tanque t, Luces l, Auto a, int accion)
 {
-     nivelGas = t.getNivelGas();
-    estadoLuces = l.getestadoLuces();
-    nivelPeligro = 15;
-    velocidadPeligro = 160;
-    
-    if (estadoLuces == 1)
+    interaccion = accion;
+    if (interaccion != 0)
     {
-        estadoLucesStr = "Prendido";
+        if (interaccion == 1)
+        {
+            velocidad = a.acelerar();
+        }
+        if (interaccion == 2)
+        {
+            velocidad = a.frenar();
+        }
+        nivelGas = t.getNivelGas();
     }
-    else
-    {
-        estadoLucesStr = "Apagado";
-    }
-    cout << "Nivel de gasoloina:         " << nivelGas << endl;
-    cout << "Estado de Luces             " << estadoLucesStr << endl;
+        cout << "Velocidad: "<< velocidad << endl;
+        cout << "Nivel Gas: "<< nivelGas << endl;
 }
 
 

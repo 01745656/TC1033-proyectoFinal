@@ -6,22 +6,22 @@
 #define TABLERO_H
 #include "Luces.h"
 #include "Tanque.h"
+#include "Auto.h"
 
 class Tablero
 {
 private:
-    int estadoAuto;
-    int velocidad;
-    int nivelGas;
-    int estadoLuces;
+    int interaccion;
     int nivelPeligro;
     int velocidadPeligro;
+    int velocidad;
+    int nivelGas;
     string estadoLucesStr;
     
 
 public:
     Tablero();
-    void dibujarTablero(Tanque t, Luces l);
+    void dibujarTablero(Tanque t, Luces l, Auto a, int accion);
 
 };
 #endif

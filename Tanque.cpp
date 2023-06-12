@@ -34,9 +34,17 @@ double Tanque::cargarTanque(int lit)
 
 double Tanque::gastarTanque(int velAct)
 {
-    nivelGas = nivelGas-((.005)*(velAct));
+    nivelGas = nivelGas-((tasaDis)*(velAct));
     nivelPerc = (nivelGas*100)/capMax;
     return nivelPerc;
+}
+
+Tanque::Tanque(int nivGas)
+{
+    nivelGas = 42;
+    tasaDis = .005;
+    capMax = 42;
+    nivelPerc = (nivelGas*100)/capMax; 
 }
 
 void Tanque::imprimir()

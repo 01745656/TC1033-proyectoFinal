@@ -5,29 +5,30 @@
 #include "Tanque.h"
 #include "Luces.h"
 #include "Tablero.h"
+#include "Auto.h"
 #include <iostream>
 using namespace std;
 int main(int argc, char const *argv[])
 {
     Tanque t;
-    t.imprimir();
-    
-
     Luces l;
-    l.imprimir();
+    //l.imprimir();
+    //t.gastarTanque(25);
+    //l.prenderLuces();
+    //t.gastarTanque(200);
+    //ta.dibujarTablero(t,l);
 
-    Tablero ta;
-    ta.dibujarTablero(t, l);
+    Auto a;
+    a.imprimir();
+    a.acelerar();
+    a.imprimir();
+    a.acelerar();
+    a.imprimir();
 
-    t.gastarTanque(25);
-    l.prenderLuces();
-    t.gastarTanque(200);
-    
 
-    ta.dibujarTablero(t,l);
-    
-    
-    
 
+
+
+    
     return 0;
 }
