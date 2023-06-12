@@ -16,8 +16,11 @@ Tanque::Tanque()
     
 }
 
-double Tanque::cargarTanque(int lit)
+double Tanque::cargarTanque()
 {
+    cout << "Cuantos litros desea agregar? " << endl;
+    int lit;
+    cin>>lit;
     if (nivelGas + lit < capMax)
     {
         nivelGas += lit;

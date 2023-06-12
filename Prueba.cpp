@@ -19,11 +19,15 @@ int main(int argc, char const *argv[])
     //ta.dibujarTablero(t,l);
 
     Auto a;
-    a.imprimir();
-    a.acelerar();
-    a.imprimir();
-    a.acelerar();
-    a.imprimir();
+    a.interaccionUsuario(0);
+    a.interaccionUsuario(6);
+    a.interaccionUsuario(1);
+    a.interaccionUsuario(6);
+    a.interaccionUsuario(3);
+    a.interaccionUsuario(6);
+    a.interaccionUsuario(0);
+    a.interaccionUsuario(6);
+//El tablero tiene la funcion de dibujar esta tiene los parametros y dentro de interaccion con usuario se dibuja
 
 
 

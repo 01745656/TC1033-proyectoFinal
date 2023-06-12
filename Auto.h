@@ -19,12 +19,15 @@ private:
     int tasaAceleracion;
     int velocidadMaxima;
     Tanque t;
+    Luces l;
 
 public:
     Auto();
     int acelerar();
     int frenar();
     void imprimir();
+    int encenderApagarAuto();
+    void interaccionUsuario(int i);
 
 };
 #endif
