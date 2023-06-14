@@ -15,7 +15,8 @@ int main(int argc, char const *argv[])
     i = 0;
     while (i != 7)
     {
-       i = a.interaccionUsuario();
+       i = a.realizarAccion();
+       
 
     }
     

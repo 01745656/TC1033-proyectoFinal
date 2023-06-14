@@ -79,13 +79,6 @@ int Auto::frenar()
     return velocidadActual;
 }
 
-void Auto::imprimir()
-{
-    cout << "Velodidad actual: " << velocidadActual << endl;
-    cout << "Nivel Gasolina: " << t.getNivelGas() << endl;
-    cout << "Estado Auto: " << estadoAuto << endl;
-    cout << "Estado Luces: " << l.getestadoLuces() << endl;
-}
 
 string Auto::encenderApagarAuto()
 {
@@ -100,7 +93,7 @@ string Auto::encenderApagarAuto()
     return estadoAuto;
 }
 
-int Auto::interaccionUsuario()
+int Auto::realizarAccion()
 {
     cout << endl;
     int i = ta.mostrarOpciones();

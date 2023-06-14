@@ -36,61 +36,61 @@ void Tablero::dibujarTablero(string estdoAuto, int velocidad, double nGas, strin
     {       
         cout << "Estado del Auto:          " << estdoAuto << endl;
         cout << endl;
-        cout << "Velocidad:                " << velocidad << endl;
-        cout << "Nivel de gasolina:        " << nGas << endl;
+        cout << "Velocidad:                " << velocidad << " Km/h" << endl;
+        cout << "Nivel de gasolina:        " << nGas << " %" << endl;
         cout << "Luces:                    " << estadoLuz << endl;
-        cout << "Presión llanta 1          " << llanta1 << endl;
-        cout << "Presión llanta 2          " << llanta2 << endl;
-        cout << "Presión llanta 3          " << llanta3 << endl;
-        cout << "Presión llanta 4          " << llanta4 << endl;
+        cout << "Presión llanta 1          " << llanta1 << " lb" << endl;
+        cout << "Presión llanta 2          " << llanta2 << " lb" << endl;
+        cout << "Presión llanta 3          " << llanta3 << " lb" << endl;
+        cout << "Presión llanta 4          " << llanta4 << " lb" << endl;
     }
-    else if (velocidad >= velocidadPeligro)
+    else if (velocidad >= velocidadPeligro && estdoAuto == "Encendido")
     {
         cout << "Estado del Auto:          " << estdoAuto << endl;
         cout << endl;
-        cout << "Velocidad:                " << velocidad << "(!CUIDADO¡)" << endl;
-        cout << "Nivel de gasolina:        " << nGas << endl;
+        cout << "Velocidad:                " << velocidad << " Km/h (!CUIDADO¡)" << endl;
+        cout << "Nivel de gasolina:        " << nGas << " %" << endl;
         cout << "Luces:                    " << estadoLuz << endl;
-        cout << "Presión llanta 1          " << llanta1 << endl;
-        cout << "Presión llanta 2          " << llanta2 << endl;
-        cout << "Presión llanta 3          " << llanta3 << endl;
-        cout << "Presión llanta 4          " << llanta4 << endl;
+        cout << "Presión llanta 1          " << llanta1 << " lb" << endl;
+        cout << "Presión llanta 2          " << llanta2 << " lb" << endl;
+        cout << "Presión llanta 3          " << llanta3 << " lb" << endl;
+        cout << "Presión llanta 4          " << llanta4 << " lb" << endl;
     }
-    if (nGas <= nivelPeligro)
+    else if (nGas <= nivelPeligro && estdoAuto == "Encendido")
     {
         cout << "Estado del Auto:          " << estdoAuto << endl;
         cout << endl;
-        cout << "Velocidad:                " << velocidad << endl;
-        cout << "Nivel de gasolina:        " << nGas << "(BAJO)" << endl;
+        cout << "Velocidad:                " << velocidad << " Km/h" << endl;
+        cout << "Nivel de gasolina:        " << nGas << " % (BAJO)" << endl;
         cout << "Luces:                    " << estadoLuz << endl;
-        cout << "Presión llanta 1          " << llanta1 << endl;
-        cout << "Presión llanta 2          " << llanta2 << endl;
-        cout << "Presión llanta 3          " << llanta3 << endl;
-        cout << "Presión llanta 4          " << llanta4 << endl;
+        cout << "Presión llanta 1          " << llanta1 << " lb" << endl;
+        cout << "Presión llanta 2          " << llanta2 << " lb" << endl;
+        cout << "Presión llanta 3          " << llanta3 << " lb" << endl;
+        cout << "Presión llanta 4          " << llanta4 << " lb" << endl;
     }
-    if (velocidad >= velocidadPeligro && nGas <= nivelPeligro)
+    else if (velocidad >= velocidadPeligro && nGas <= nivelPeligro && estdoAuto == "Encendido")
     {
         cout << "Estado del Auto:          " << estdoAuto << endl;
         cout << endl;
-        cout << "Velocidad:                " << velocidad << "(!CUIDADO¡)" << endl;
-        cout << "Nivel de gasolina:        " << nGas << "(BAJO)" << endl;
+        cout << "Velocidad:                " << velocidad << " Km/h (!CUIDADO¡)" << endl;
+        cout << "Nivel de gasolina:        " << nGas << " % (BAJO)" << endl;
         cout << "Luces:                    " << estadoLuz << endl;
-        cout << "Presión llanta 1          " << llanta1 << endl;
-        cout << "Presión llanta 2          " << llanta2 << endl;
-        cout << "Presión llanta 3          " << llanta3 << endl;
-        cout << "Presión llanta 4          " << llanta4 << endl;
+        cout << "Presión llanta 1          " << llanta1 << " lb" << endl;
+        cout << "Presión llanta 2          " << llanta2 << " lb" << endl;
+        cout << "Presión llanta 3          " << llanta3 << " lb" << endl;
+        cout << "Presión llanta 4          " << llanta4 << " lb" << endl;
     }
-    else if (estdoAuto == "Apagado")
+    if (estdoAuto == "Apagado")
     {
         cout << "Estado del Auto:          " << estdoAuto << endl;
         cout << endl;
         cout << "Velocidad:                NA" << endl;
         cout << "Nivel de gasolina:        NA" << endl;
         cout << "Luces:                    NA" << endl;
-        cout << "Presión llanta 1          " << llanta1 << endl;
-        cout << "Presión llanta 2          " << llanta2 << endl;
-        cout << "Presión llanta 3          " << llanta3 << endl;
-        cout << "Presión llanta 4          " << llanta4 << endl;
+        cout << "Presión llanta 1          " << llanta1 << " lb" << endl;
+        cout << "Presión llanta 2          " << llanta2 << " lb" << endl;
+        cout << "Presión llanta 3          " << llanta3 << " lb" << endl;
+        cout << "Presión llanta 4          " << llanta4 << " lb" << endl;
     }
     
 }

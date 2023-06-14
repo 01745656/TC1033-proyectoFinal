@@ -29,8 +29,7 @@ public:
     Auto();
     int acelerar();
     int frenar();
-    void imprimir();
     string encenderApagarAuto();
-    int interaccionUsuario();
+    int realizarAccion();
 };
 #endif
