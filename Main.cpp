@@ -13,7 +13,7 @@ int main(int argc, char const *argv[])
     Auto a;
     int i;
     i = 0;
-    while (i != 6)
+    while (i != 7)
     {
        i = a.interaccionUsuario();
 

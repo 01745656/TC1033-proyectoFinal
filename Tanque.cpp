@@ -9,7 +9,7 @@ using namespace std;
 
 Tanque::Tanque()
 {
-    nivelGas = 1;
+    nivelGas = 42;
     tasaDis = .005;
     capMax = 42;
     nivelPerc = (nivelGas*100)/capMax;

@@ -1,13 +1,14 @@
 /**
  * Autor Ricardo Medina Nolasco
  * Crecion de clase auto
-*/
+ */
 
 #ifndef AUTO_H
 #define AUTO_H
 #include "Luces.h"
 #include "Tanque.h"
 #include "Tablero.h"
+#include "Llanta.h"
 #include <iostream>
 using namespace std;
 
@@ -22,6 +23,7 @@ private:
     Tanque t;
     Luces l;
     Tablero ta;
+    Llanta c[4];
 
 public:
     Auto();
@@ -30,6 +32,5 @@ public:
     void imprimir();
     string encenderApagarAuto();
     int interaccionUsuario();
-
 };
 #endif

@@ -16,6 +16,7 @@ Auto::Auto()
     Tanque t;
     Luces l;
     Tablero ta;
+    Llanta c[4];
 }
 
 int Auto::acelerar()
@@ -130,11 +131,26 @@ int Auto::interaccionUsuario()
     }
     if (i == 6)
     {
-        imprimir();
+        int q;
+        int d;
+        cout << "Numero de la llanta que desea cambiar: ";
+        cin >> q;
+        cout << endl;
+        cout << "Nueva presion: ";
+        cin >> d;
+        cout << endl;
+        if ((d * 100) / 33 >= 120 || (d * 100) / 33 <= 80)
+        {
+            cout << "Presion de neumaticos peligrosa" << endl;
+        }
+        else
+        {
+            c[q - 1].setPresion(d);
+        }
     }
 
     cout << "------------------------" << endl;
-    ta.dibujarTablero(estadoAuto, velocidadActual, t.getNivelGas(), l.getestadoLuces());
+    ta.dibujarTablero(estadoAuto, velocidadActual, t.getNivelGas(), l.getestadoLuces(), c[0].getPresion(), c[1].getPresion(), c[2].getPresion(), c[3].getPresion());
     cout << "------------------------" << endl;
 
     return i;

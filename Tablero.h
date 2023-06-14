@@ -17,7 +17,7 @@ private:
     
 public:
     Tablero();
-    void dibujarTablero(string estdoAuto, int velocidad, double nGas, string estadoLuz);
+    void dibujarTablero(string estdoAuto, int velocidad, double nGas, string estadoLuz, int llanta1, int llanta2, int llanta3, int llanta4);
     int mostrarOpciones();
 
 };
