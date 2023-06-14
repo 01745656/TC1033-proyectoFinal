@@ -9,7 +9,7 @@ using namespace std;
 
 Tanque::Tanque()
 {
-    nivelGas = 42;
+    nivelGas = 1;
     tasaDis = .005;
     capMax = 42;
     nivelPerc = (nivelGas*100)/capMax;
@@ -18,7 +18,7 @@ Tanque::Tanque()
 
 double Tanque::cargarTanque()
 {
-    cout << "Cuantos litros desea agregar? " << endl;
+    cout << "Teclea los litros que se desean cargar: ";
     int lit;
     cin>>lit;
     if (nivelGas + lit < capMax)
@@ -37,7 +37,14 @@ double Tanque::cargarTanque()
 
 double Tanque::gastarTanque(int velAct)
 {
-    nivelGas = nivelGas-((tasaDis)*(velAct));
+    if (nivelGas-((tasaDis)*(velAct)) <= 0)
+    {
+        nivelGas = 0;
+    }
+    else
+    {
+        nivelGas = nivelGas-((tasaDis)*(velAct));
+    }
     nivelPerc = (nivelGas*100)/capMax;
     return nivelPerc;
 }

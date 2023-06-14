@@ -11,14 +11,14 @@ using namespace std;
 class Luces
 {
 private:
-    int estadoLuces;
+    string estadoLuces;
 
 public:
     Luces();
-    int prenderLuces();
-    int apagarLuces();
+    void prenderLuces();
+    void apagarLuces();
     void imprimir();
-    int getestadoLuces();
+    string getestadoLuces();
 
 };
 

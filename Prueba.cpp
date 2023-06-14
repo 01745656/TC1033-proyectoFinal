@@ -10,23 +10,16 @@
 using namespace std;
 int main(int argc, char const *argv[])
 {
-    Tanque t;
-    Luces l;
-    //l.imprimir();
-    //t.gastarTanque(25);
-    //l.prenderLuces();
-    //t.gastarTanque(200);
-    //ta.dibujarTablero(t,l);
-
     Auto a;
-    a.interaccionUsuario(0);
-    a.interaccionUsuario(6);
-    a.interaccionUsuario(1);
-    a.interaccionUsuario(6);
-    a.interaccionUsuario(3);
-    a.interaccionUsuario(6);
-    a.interaccionUsuario(0);
-    a.interaccionUsuario(6);
+    int i;
+    i = 0;
+    while (i != 6)
+    {
+       i = a.interaccionUsuario();
+
+    }
+    
+
 //El tablero tiene la funcion de dibujar esta tiene los parametros y dentro de interaccion con usuario se dibuja
 
 

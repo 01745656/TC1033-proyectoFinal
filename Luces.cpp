@@ -9,33 +9,31 @@ using namespace std;
 
 Luces::Luces()
 {
-    estadoLuces = 0;
+    estadoLuces = "Apagadas";
 }
 
-int Luces::prenderLuces()
+void Luces::prenderLuces()
 {
-    if(estadoLuces == 0)
+    if(estadoLuces == "Apagadas")
     {
-        estadoLuces = 1;
+        estadoLuces = "Prendidas";
     }
     else
     {
         cout << "Las luces ya estan prendidas" << endl;
     }
-    return estadoLuces;
 }
 
-int Luces::apagarLuces()
+void Luces::apagarLuces()
 {
-    if(estadoLuces == 1)
+    if(estadoLuces == "Prendidas")
     {
-        estadoLuces = 0;
+        estadoLuces = "Apagadas";
     }
     else
     {
         cout << "Las luces ya estan apagadas" << endl;
     }
-    return estadoLuces;
 }
 
 void Luces::imprimir()
@@ -43,7 +41,7 @@ void Luces::imprimir()
     cout <<"Estado de Luces: "<< estadoLuces <<endl;
 }
 
-int Luces::getestadoLuces()
+string Luces::getestadoLuces()
 {
     return estadoLuces;
 }

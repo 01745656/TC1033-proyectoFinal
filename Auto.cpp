@@ -1,31 +1,52 @@
 /**
  * Autor Ricardo Medina Nolasco
  * Implementacion clase auto
-*/
+ */
 #include "Auto.h"
+#include <iostream>
+using namespace std;
 
 Auto::Auto()
 {
-    estadoAuto = 0;
+    estadoAuto = "Apagado";
     velocidadActual = 0;
     tasaFrenado = 25;
     tasaAceleracion = 15;
     velocidadMaxima = 230;
     Tanque t;
     Luces l;
-
+    Tablero ta;
 }
 
 int Auto::acelerar()
 {
-    if (estadoAuto == 1)
+    if (estadoAuto == "Encendido")
     {
-        velocidadActual += tasaAceleracion;
-        t.gastarTanque(velocidadActual);
+        if (t.getNivelGas() > 0)
+        {
+            if (velocidadActual == velocidadMaxima)
+            {
+                cout << "El auto ya no puede acelerar más" << endl;
+            }
+            else if (velocidadActual + tasaAceleracion > velocidadMaxima)
+            {
+                velocidadActual = velocidadMaxima;
+            }
+            else
+            {
+                velocidadActual += tasaAceleracion;
+                t.gastarTanque(velocidadActual);
+            }
+        }
+        else
+        {
+            velocidadActual = 0;
+            cout << "El tanque no tiene gasolina" << endl;
+        }
     }
-     else 
+    else
     {
-        cout << "El auto no se puede mover si esta apagado"<<endl;
+        cout << "El auto no se puede mover si esta apagado" << endl;
     }
 
     return velocidadActual;
@@ -33,14 +54,27 @@ int Auto::acelerar()
 
 int Auto::frenar()
 {
-    if (estadoAuto == 1)
+
+    if (estadoAuto == "Encendido")
     {
-        velocidadActual -= tasaFrenado;
+        if (velocidadActual == 0)
+        {
+            cout << "El auto ya esta inmovil" << endl;
+        }
+        else if (velocidadActual - tasaFrenado < 0)
+        {
+            velocidadActual = 0;
+        }
+        else
+        {
+            velocidadActual -= tasaFrenado;
+        }
     }
-    else 
+    else
     {
-        cout << "El auto no se puede mover si esta apagado"<<endl;
+        cout << "El auto no se puede mover si esta apagado" << endl;
     }
+
     return velocidadActual;
 }
 
@@ -52,22 +86,24 @@ void Auto::imprimir()
     cout << "Estado Luces: " << l.getestadoLuces() << endl;
 }
 
-
-int Auto::encenderApagarAuto()
+string Auto::encenderApagarAuto()
 {
-    if (estadoAuto == 0)
+    if (estadoAuto == "Apagado")
     {
-        estadoAuto = 1;
+        estadoAuto = "Encendido";
     }
     else
     {
-        estadoAuto = 0;
+        estadoAuto = "Apagado";
     }
     return estadoAuto;
 }
 
-void Auto::interaccionUsuario(int i)
+int Auto::interaccionUsuario()
 {
+    cout << endl;
+    int i = ta.mostrarOpciones();
+    cout << endl;
     if (i == 0)
     {
         encenderApagarAuto();
@@ -96,4 +132,10 @@ void Auto::interaccionUsuario(int i)
     {
         imprimir();
     }
+
+    cout << "------------------------" << endl;
+    ta.dibujarTablero(estadoAuto, velocidadActual, t.getNivelGas(), l.getestadoLuces());
+    cout << "------------------------" << endl;
+
+    return i;
 }

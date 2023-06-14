@@ -1,41 +1,75 @@
 /**
  * Autor Ricardo Medina NOLASCO
  * Implementacion de la clase Tablero
-*/
+ */
 #include "Tablero.h"
 #include <iostream>
-#include "Luces.h"
-#include "Tanque.h"
-#include "Auto.h"
+
 using namespace std;
+
+int Tablero::mostrarOpciones()
+{
+    cout << "Escoge el numero de la accion que quieres realizar" << endl;
+    cout << "0 = Prender/Apagar el auto." << endl;
+    cout << "1 = Acelerar." << endl;
+    cout << "2 = Frenar." << endl;
+    cout << "3 = Prender luces." << endl;
+    cout << "4 = Apagar luces." << endl;
+    cout << "5 = Cargar gasolina." << endl;
+    cout << "6 = Salir." << endl;
+    cout << "Numero: ";
+    int numero;
+    cin >> numero;
+    return numero;
+}
 
 Tablero::Tablero()
 {
-    interaccion = 0;
     nivelPeligro = 15;
     velocidadPeligro = 160;
-    velocidad = 0;
-    nivelGas = 100;
 }
 
-
-void Tablero::dibujarTablero(Tanque t, Luces l, Auto a, int accion)
+void Tablero::dibujarTablero(string estdoAuto, int velocidad, double nGas, string estadoLuz)
 {
-    interaccion = accion;
-    if (interaccion != 0)
-    {
-        if (interaccion == 1)
-        {
-            velocidad = a.acelerar();
-        }
-        if (interaccion == 2)
-        {
-            velocidad = a.frenar();
-        }
-        nivelGas = t.getNivelGas();
+    if (estdoAuto == "Encendido" && velocidad < velocidadPeligro && nGas > nivelPeligro) 
+    {       
+        cout << "Estado del Auto:          " << estdoAuto << endl;
+        cout << endl;
+        cout << "Velocidad:                " << velocidad << endl;
+        cout << "Nivel de gasolina:        " << nGas << endl;
+        cout << "Luces:                    " << estadoLuz << endl;
     }
-        cout << "Velocidad: "<< velocidad << endl;
-        cout << "Nivel Gas: "<< nivelGas << endl;
+    else if (velocidad >= velocidadPeligro)
+    {
+        cout << "Estado del Auto:          " << estdoAuto << endl;
+        cout << endl;
+        cout << "Velocidad:                " << velocidad << "(!CUIDADO¡)" << endl;
+        cout << "Nivel de gasolina:        " << nGas << endl;
+        cout << "Luces:                    " << estadoLuz << endl;
+    }
+    if (nGas <= nivelPeligro)
+    {
+        cout << "Estado del Auto:          " << estdoAuto << endl;
+        cout << endl;
+        cout << "Velocidad:                " << velocidad << endl;
+        cout << "Nivel de gasolina:        " << nGas << "(BAJO)" << endl;
+        cout << "Luces:                    " << estadoLuz << endl;
+    }
+    if (velocidad >= velocidadPeligro && nGas <= nivelPeligro)
+    {
+        cout << "Estado del Auto:          " << estdoAuto << endl;
+        cout << endl;
+        cout << "Velocidad:                " << velocidad << "(!CUIDADO¡)" << endl;
+        cout << "Nivel de gasolina:        " << nGas << "(BAJO)" << endl;
+        cout << "Luces:                    " << estadoLuz << endl;
+    }
+    else if (estdoAuto == "Apagado")
+    {
+        cout << "Estado del Auto:          " << estdoAuto << endl;
+        cout << endl;
+        cout << "Velocidad:                NA" << endl;
+        cout << "Nivel de gasolina:        NA" << endl;
+        cout << "Luces:                    NA" << endl;
+    }
+    
 }
-
-
