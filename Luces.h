@@ -17,7 +17,6 @@ public:
     Luces();
     void prenderLuces();
     void apagarLuces();
-    void imprimir();
     string getestadoLuces();
 
 };

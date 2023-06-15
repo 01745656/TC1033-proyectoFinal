@@ -18,7 +18,6 @@ public:
     double cargarTanque();
     double gastarTanque(int velAct);
     double getNivelGas();
-    void imprimir();
 
 };
 

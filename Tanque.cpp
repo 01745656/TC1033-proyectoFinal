@@ -49,13 +49,6 @@ double Tanque::gastarTanque(int velAct)
     return nivelPerc;
 }
 
-void Tanque::imprimir()
-    {
-        cout << "Nivel gas es: " << nivelPerc << " %" << endl;
-        cout << "Tasa es: " << tasaDis << endl;
-        cout << "Cap Max es: " << capMax << endl;
-    }
-
     double Tanque::getNivelGas()
     {
         return nivelPerc;

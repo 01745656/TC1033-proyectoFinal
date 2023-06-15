@@ -36,11 +36,6 @@ void Luces::apagarLuces()
     }
 }
 
-void Luces::imprimir()
-{
-    cout <<"Estado de Luces: "<< estadoLuces <<endl;
-}
-
 string Luces::getestadoLuces()
 {
     return estadoLuces;
