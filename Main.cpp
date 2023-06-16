@@ -15,13 +15,20 @@ int main(int argc, char const *argv[])
     i = 0;
     while (i != 7)
     {
-       i = a.realizarAccion();
+        while (i > 7 && i >= 0)
+        {
+            cout << "El numero debe de ser entre 0 y 7, escoje otro numero: ";
+            cout << endl;
+            i = a.realizarAccion();
+        }
+        
+        i = a.realizarAccion();
        
 
     }
     
 
-//El tablero tiene la funcion de dibujar esta tiene los parametros y dentro de interaccion con usuario se dibuja
+
 
 
 

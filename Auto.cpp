@@ -79,7 +79,6 @@ int Auto::frenar()
     return velocidadActual;
 }
 
-
 string Auto::encenderApagarAuto()
 {
     if (estadoAuto == "Apagado")
@@ -120,7 +119,14 @@ int Auto::realizarAccion()
     }
     if (i == 5)
     {
+        if (t.getNivelGas() < 42)
+        {
         t.cargarTanque();
+        }
+        else
+        {
+            cout << "El tanque esta a su maxima capacidad." << endl;
+        }
     }
     if (i == 6)
     {
@@ -132,6 +138,13 @@ int Auto::realizarAccion()
         cout << "Nueva presion: ";
         cin >> d;
         cout << endl;
+        while (d < 0)
+        {
+            cout << "La presion no puede ser negativa ingrese nueva presion: ";
+            cin >> d;
+            cout << endl;
+        }
+        cout << endl;
         if ((d * 100) / 33 >= 120 || (d * 100) / 33 <= 80)
         {
             cout << "Presion de neumaticos peligrosa" << endl;
@@ -141,10 +154,11 @@ int Auto::realizarAccion()
             c[q - 1].setPresion(d);
         }
     }
-
-    cout << "------------------------" << endl;
-    ta.dibujarTablero(estadoAuto, velocidadActual, t.getNivelGas(), l.getestadoLuces(), c[0].getPresion(), c[1].getPresion(), c[2].getPresion(), c[3].getPresion());
-    cout << "------------------------" << endl;
-
+    if (i < 7 && i >= 0)
+    {
+        cout << "------------------------" << endl;
+        ta.dibujarTablero(estadoAuto, velocidadActual, t.getNivelGas(), l.getestadoLuces(), c[0].getPresion(), c[1].getPresion(), c[2].getPresion(), c[3].getPresion());
+        cout << "------------------------" << endl;
+    }
     return i;
 }

@@ -18,9 +18,11 @@ int Tablero::mostrarOpciones()
     cout << "5 = Cargar gasolina." << endl;
     cout << "6 = Inflar o desinflar llantas." << endl;
     cout << "7 = Salir." << endl;
+    cout << "Teclea un numero entre 0 y 7" << endl;
     cout << "Numero: ";
     int numero;
     cin >> numero;
+    
     return numero;
 }
 

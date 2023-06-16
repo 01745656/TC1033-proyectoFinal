@@ -19,19 +19,26 @@ Tanque::Tanque()
 double Tanque::cargarTanque()
 {
     cout << "Teclea los litros que se desean cargar: ";
-    int lit;
+    double lit;
     cin>>lit;
-    if (nivelGas + lit < capMax)
+    cout << endl;
+    while (lit < 0)
     {
+        cout << "Los litros no pueden ser negativos: ";
+        cin>>lit;
+        cout << endl;
+        while (nivelGas + lit > capMax )
+        {
+            cout << "Los litros que puso ecceden la capacidad maxima pruebe un numero menor: ";
+            cin>>lit;
+            cout << endl;
+        }
+    }
+
         nivelGas += lit;
         nivelPerc = (nivelGas*100)/capMax;
         return nivelPerc;
-    }
-    else
-    {
-        cout << "El tanque esta a su maxima capacidad"<<endl;
-        return nivelPerc;
-    }
+
     
 }
 
