@@ -5,15 +5,18 @@
 
 #ifndef TANQUE_H
 #define TANQUE_H
+//Nombre de clase
 class Tanque
 {
 private:
+//Atributos
     double nivelGas;
     double tasaDis;
     int capMax;
     double nivelPerc;
 
 public:
+//Metodos
     Tanque();
     double cargarTanque();
     double gastarTanque(int velAct);

@@ -6,7 +6,7 @@
 #include "Tanque.h"
 #include <iostream>
 using namespace std;
-
+//Constructor
 Tanque::Tanque()
 {
     nivelGas = 42;
@@ -16,6 +16,7 @@ Tanque::Tanque()
     
 }
 
+//Funcion para cargar tanque
 double Tanque::cargarTanque()
 {
     cout << "Teclea los litros que se desean cargar: ";
@@ -42,6 +43,7 @@ double Tanque::cargarTanque()
     
 }
 
+//Funcion para gastar el tanque 
 double Tanque::gastarTanque(int velAct)
 {
     if (nivelGas-((tasaDis)*(velAct)) <= 0)

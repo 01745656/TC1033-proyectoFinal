@@ -7,11 +7,12 @@
 #include <iostream>
 using namespace std;
 
+//Constructor 
 Luces::Luces()
 {
     estadoLuces = "Apagadas";
 }
-
+//Funcion para prener luces
 void Luces::prenderLuces()
 {
     if(estadoLuces == "Apagadas")
@@ -24,6 +25,7 @@ void Luces::prenderLuces()
     }
 }
 
+//Funcion para apagar luces
 void Luces::apagarLuces()
 {
     if(estadoLuces == "Prendidas")
@@ -36,6 +38,7 @@ void Luces::apagarLuces()
     }
 }
 
+//Funcion para accesar el estado luces
 string Luces::getestadoLuces()
 {
     return estadoLuces;

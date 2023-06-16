@@ -1,6 +1,6 @@
 /**
  * Autor Ricardo Medina Nolasco 
- * Clase de luces
+ * Creacion de clase de luces
 */
 
 #ifndef LUCES_H
@@ -8,11 +8,13 @@
 #include <iostream>
 using namespace std;
 
+//Nombre de clase
 class Luces
 {
+//Atributos
 private:
     string estadoLuces;
-
+//Metodos 
 public:
     Luces();
     void prenderLuces();

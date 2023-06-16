@@ -7,6 +7,7 @@
 
 using namespace std;
 
+//Funcion que muestra las opcciones
 int Tablero::mostrarOpciones()
 {
     cout << "Escoge el numero de la accion que quieres realizar" << endl;
@@ -25,13 +26,13 @@ int Tablero::mostrarOpciones()
     
     return numero;
 }
-
+//Constructor
 Tablero::Tablero()
 {
     nivelPeligro = 15;
     velocidadPeligro = 160;
 }
-
+// FUNCION QUE DIBUJA EL TABLERO
 void Tablero::dibujarTablero(string estdoAuto, int velocidad, double nGas, string estadoLuz, int llanta1, int llanta2, int llanta3, int llanta4)
 {
     if (estdoAuto == "Encendido" && velocidad < velocidadPeligro && nGas > nivelPeligro) 

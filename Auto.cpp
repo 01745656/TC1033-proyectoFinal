@@ -1,11 +1,12 @@
 /**
  * Autor Ricardo Medina Nolasco
- * Implementacion clase auto
+ * Implementacion clase auto con los contructores y las funciones necesarias
  */
 #include "Auto.h"
 #include <iostream>
 using namespace std;
 
+//Constructor
 Auto::Auto()
 {
     estadoAuto = "Apagado";
@@ -19,6 +20,7 @@ Auto::Auto()
     Llanta c[4];
 }
 
+//Funcion para acelerar con las condiciones necesarias
 int Auto::acelerar()
 {
     if (estadoAuto == "Encendido")
@@ -53,6 +55,7 @@ int Auto::acelerar()
     return velocidadActual;
 }
 
+//Funcion para frenar con las condiciones necesarias
 int Auto::frenar()
 {
 
@@ -79,6 +82,7 @@ int Auto::frenar()
     return velocidadActual;
 }
 
+//Funcion para prender y apagar auto
 string Auto::encenderApagarAuto()
 {
     if (estadoAuto == "Apagado")
@@ -92,6 +96,7 @@ string Auto::encenderApagarAuto()
     return estadoAuto;
 }
 
+//Funcion que ejecuta todas las acciones
 int Auto::realizarAccion()
 {
     cout << endl;

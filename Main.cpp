@@ -8,8 +8,10 @@
 #include "Auto.h"
 #include <iostream>
 using namespace std;
+//Funcion main
 int main(int argc, char const *argv[])
 {
+    //Creacion de un objeto auto
     Auto a;
     int i;
     i = 0;
@@ -19,7 +21,7 @@ int main(int argc, char const *argv[])
         {
             cout << "El numero debe de ser entre 0 y 7, escoje otro numero: ";
             cout << endl;
-            i = a.realizarAccion();
+            i = a.realizarAccion(); // Funcion que realiza ls acciones
         }
         
         i = a.realizarAccion();
