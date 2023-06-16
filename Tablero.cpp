@@ -46,7 +46,7 @@ void Tablero::dibujarTablero(string estdoAuto, int velocidad, double nGas, strin
         cout << "Presión llanta 3          " << llanta3 << " lb" << endl;
         cout << "Presión llanta 4          " << llanta4 << " lb" << endl;
     }
-    else if (velocidad >= velocidadPeligro && estdoAuto == "Encendido")
+    else if (velocidad >= velocidadPeligro && estdoAuto == "Encendido" && nGas > nivelPeligro)
     {
         cout << "Estado del Auto:          " << estdoAuto << endl;
         cout << endl;
@@ -58,7 +58,7 @@ void Tablero::dibujarTablero(string estdoAuto, int velocidad, double nGas, strin
         cout << "Presión llanta 3          " << llanta3 << " lb" << endl;
         cout << "Presión llanta 4          " << llanta4 << " lb" << endl;
     }
-    else if (nGas <= nivelPeligro && estdoAuto == "Encendido")
+    else if (nGas <= nivelPeligro && estdoAuto == "Encendido" && velocidad < velocidadPeligro)
     {
         cout << "Estado del Auto:          " << estdoAuto << endl;
         cout << endl;

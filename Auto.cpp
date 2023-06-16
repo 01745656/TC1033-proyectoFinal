@@ -119,7 +119,7 @@ int Auto::realizarAccion()
     }
     if (i == 5)
     {
-        if (t.getNivelGas() < 42)
+        if (t.getNivelGas() < 100)
         {
         t.cargarTanque();
         }
